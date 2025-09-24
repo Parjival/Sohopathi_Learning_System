@@ -99,6 +99,34 @@ Should return `{ "message": "Auth working" }`
 
 ## 💻 Run Without Docker (Manual)
 
+### 0. SmythOS Agent Setup
+
+Before running the application, you need to configure your SmythOS agent:
+
+1. **Get your SmythOS API Key:**
+   - Log into your SmythOS dashboard
+   - Navigate to API settings
+   - Copy your API key
+
+2. **Configure Environment Variables:**
+   ```bash
+   cd backend
+   cp .env.example .env
+   ```
+   
+   Edit `.env` and add your keys:
+   ```env
+   SMYTHOS_URL=https://api.smythos.com
+   SMYTHOS_API_KEY=your_actual_smythos_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
+   SIGN_LANGUAGE_API_KEY=your_sign_language_api_key_here
+   ```
+
+3. **Agent Configuration:**
+   - Your agent ID `cmfxy2xt24p88o3wt5eybaha8` is already configured
+   - The agent endpoints are mapped to your SmythOS configuration
+   - Mock responses are provided for development when APIs are not available
+
 ### 1. Backend setup
 
 ```bash
@@ -115,6 +143,8 @@ npm run dev
 
 Backend → [http://localhost:5000](http://localhost:5000)
 
+**Note:** If SmythOS API key is not configured, the app will use mock responses for development.
+
 ### 2. Frontend setup
 
 ```bash
@@ -130,6 +160,30 @@ Make sure API base URL in `frontend/src/services/api.js` is:
 ```js
 const API = axios.create({ baseURL: "http://localhost:5000/api" });
 ```
+
+### 3. Testing the Agent Integration
+
+You can test the SmythOS agent integration by:
+
+1. **Using the Frontend:** Navigate to any skill (Storybook, Sign Language, etc.) and submit content
+2. **Direct API Testing:** Use curl or Postman to test endpoints:
+
+```bash
+# Test Storybook Creation
+curl -X POST http://localhost:5000/api/skills/storybook \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -d '{
+    "title": "Test Story",
+    "content": "This is a test content for storybook creation."
+  }'
+```
+
+### 4. Development vs Production
+
+- **Development Mode:** Uses mock responses when SmythOS API key is not configured
+- **Production Mode:** Calls actual SmythOS agent endpoints
+- **Error Handling:** Falls back to mock responses if agent calls fail
 
 ---
 
