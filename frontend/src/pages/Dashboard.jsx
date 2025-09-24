@@ -19,6 +19,11 @@ import StorybookCreator from '../components/skills/StorybookCreator';
 import SignLanguageCreator from '../components/skills/SignLanguageCreator';
 import AudiobookCreator from '../components/skills/AudiobookCreator';
 import LiveCaptioning from '../components/skills/LiveCaptioning';
+import SocialStoryCreator from '../components/skills/SocialStoryCreator';
+import ImageDescriber from '../components/skills/ImageDescriber';
+import MathHelper from '../components/skills/MathHelper';
+import EmotionCoach from '../components/skills/EmotionCoach';
+import CommunicationBoard from '../components/skills/CommunicationBoard';
 import { Card, CardContent, CardHeader } from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 
@@ -64,7 +69,7 @@ const Dashboard = () => {
       description: 'Create personalized social stories to help students with autism navigate social situations.',
       icon: Users,
       category: 'Social',
-      component: null,
+      component: SocialStoryCreator,
     },
     {
       id: 'describe_image',
@@ -72,7 +77,7 @@ const Dashboard = () => {
       description: 'Generate detailed descriptions of images, diagrams, and visual content for blind students.',
       icon: Eye,
       category: 'Visual',
-      component: null,
+      component: ImageDescriber,
     },
     {
       id: 'math',
@@ -80,7 +85,7 @@ const Dashboard = () => {
       description: 'Step-by-step math problem solving with visual explanations for students with dyscalculia.',
       icon: Calculator,
       category: 'Academic',
-      component: null,
+      component: MathHelper,
     },
     {
       id: 'emotion',
@@ -88,7 +93,7 @@ const Dashboard = () => {
       description: 'Provide emotional support, coping strategies, and mental health guidance for students.',
       icon: Heart,
       category: 'Wellness',
-      component: null,
+      component: EmotionCoach,
     },
     {
       id: 'comm_board',
@@ -96,7 +101,7 @@ const Dashboard = () => {
       description: 'Generate personalized AAC communication boards for students with speech disorders.',
       icon: MessageSquare,
       category: 'Communication',
-      component: null,
+      component: CommunicationBoard,
     },
   ];
 
