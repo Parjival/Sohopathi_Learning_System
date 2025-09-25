@@ -210,23 +210,6 @@ curl -X POST http://localhost:5000/api/skills/storybook \
 
 ---
 
-## ⚡ Hackathon Tips
-
-* Judges love **one-command setup**: use Docker Compose.
-* Prepare short **demo flows** for each skill.
-* Show off **ER Diagram + Accessibility-First UI** in your presentation.
-* Add sample test data (we included seed routes for quick testing).
-
----
-
-## 📸 Screenshots (Add Yours)
-
-* Frontend home page
-* Example: Dyslexic storybook output
-* Example: Live captions in real-time
-* Example: Math problem solver step-by-step
-
----
 
 ## 📜 License
 
